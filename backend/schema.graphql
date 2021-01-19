@@ -1,0 +1,111 @@
+type Query {
+  checkUser(query: CheckUserInput!): User!
+  getCourses(filter: CourseInput): [Course]
+}
+
+type Mutation {
+  createUser(data: CreateUserInput!): User!
+  updateUserCourse(data: UpdateUserInput!): String!
+}
+
+input CheckUserInput {
+  password: String!
+  id: String!
+}
+
+input CourseInput {
+  serialNumber: String
+  courseName: String
+  semester: String
+  designatedFor: String
+  professor: String
+  courseCode: String
+  id: String
+  class: String
+  day1: Boolean
+  day2: Boolean
+  day3: Boolean
+  day4: Boolean
+  day5: Boolean
+  day6: Boolean
+  time1: String
+  time2: String
+  time3: String
+  time4: String
+  time5: String
+  time6: String
+  people: String
+  peopleChosing: Int
+  classroom: String
+  add: String
+  school: String
+  college: String
+  group: String
+  commonRequired: String
+  otherCourse: String
+  general: String
+  hot: String
+  tags: String
+}
+
+input CreateUserInput {
+  name: String!
+  password: String!
+  id: String!
+  sessionId: String!
+  courses: String!
+}
+
+input UpdateUserInput {
+  courses: String!
+  id: String!
+}
+
+type User {
+  name: String!
+  password: String!
+  id: String!
+  sessionId: String!
+  courses: String!
+}
+
+type Course {
+  serialNumber: String
+  courseName: String
+  semester: String
+  designatedFor: String
+  professor: String
+  courseCode: String
+  id: String
+  class: String
+  credit: String
+  fullHalf: String
+  day1: Boolean
+  day2: Boolean
+  day3: Boolean
+  day4: Boolean
+  day5: Boolean
+  day6: Boolean
+  time1: String
+  time2: String
+  time3: String
+  time4: String
+  time5: String
+  time6: String
+  people: String
+  peopleChosing: Int
+  classroom: String
+  add: String
+  remark: String
+  ceiba: String
+  description: String
+  objective: String
+  school: String
+  college: String
+  group: String
+  commonRequired: String
+  otherCourse: String
+  general: String
+  hot: String
+  tags: String
+}
